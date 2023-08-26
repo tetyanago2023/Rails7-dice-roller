@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Dice types</h1>
+
+<div id="dice_types"
+     data-controller="sortable"
+     data-sortable-animation-value="150"
+     data-sortable-resource-name-value="dice_type">
+  <% @dice_types.each do |dice_type| %>
+    <div data-sortable-update-url="<%= order_dice_type_path(dice_type) %>">
+    <%= render dice_type %>
+    <p>
+      <%= link_to "Show this dice type", dice_type %>
+    </p>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New dice type", new_dice_type_path %>

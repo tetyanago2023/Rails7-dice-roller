@@ -1,0 +1,2 @@
+module DiceTypesHelper
+end

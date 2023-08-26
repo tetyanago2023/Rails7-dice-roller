@@ -1,0 +1,26 @@
+<h1>On A Roll</h1>
+<%= form_with model: @roll,
+              url: dice_rolls_path,
+              method: :post,
+              local: true,
+              data: {
+                controller: 'nested-form',
+                nested_form_wrapper_selector_value: '.nested-form-wrapper'
+              } do |f| %>
+  <template data-nested-form-target="template">
+    <%= f.fields_for :dice_rolls, DiceRoll.new, child_index: "NEW_RECORD" do |dice_roll_fields| %>
+      <%= render "dice_rolls/dice_roll_fields", f: dice_roll_fields %>
+    <% end %>
+  </template>
+  <%= f.fields_for :dice_rolls do |dice_roll_fields| %>
+    <%= render "dice_rolls/dice_roll_fields", f: dice_roll_fields %>
+  <% end %>
+  <div data-nested-form-target="target"></div>
+  <button type="button" data-action="nested-form#add">Add Roll</button>
+  <%= f.submit "Roll Dice!" %>
+<% end %>
+<div id="rolls">
+  <% @rolls.each do |roll| %>
+    <%= render "rolls/roll", roll: roll %>
+  <% end %>
+</div>

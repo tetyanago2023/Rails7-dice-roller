@@ -1,0 +1,8 @@
+<div id="<%= dom_id(roll) %>">
+  <% puts dom_id(roll) %>
+  <p>You rolled <%= roll.total %> / <%= roll.max_total %></p>
+  <% roll.dice_rolls.includes(:dice_type).order('dice_types.position ASC').each do |dice_roll| %>
+    <%= render "dice_rolls/dice_roll", dice_roll: dice_roll %>
+  <% end %>
+  <hr />
+</div>

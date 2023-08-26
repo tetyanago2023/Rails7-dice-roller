@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Dice rolls</h1>
+
+<div id="dice_rolls">
+  <% @dice_rolls.each do |dice_roll| %>
+    <%= render dice_roll %>
+    <p>
+      <%= link_to "Show this dice roll", dice_roll %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New dice roll", new_dice_roll_path %>

@@ -1,0 +1,7 @@
+<div class="nested-form-wrapper" data-new-record="<%= f.object.new_record? %>">
+  <%= f.collection_select :dice_type_id, @dice_types, :id, :name %>
+  <%= f.number_field :quantity, in: 1..10, value: 1 %>
+  <%= f.hidden_field :_destroy %>
+  <button type="button" data-action="nested-form#remove">Remove Roll</button>
+</div>
+

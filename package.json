@@ -1,0 +1,9 @@
+{
+  "name": "rails7_dice_roller",
+  "version": "1.0.0",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "stimulus-rails-nested-form": "^4.1.0",
+    "stimulus-sortable": "^4.1.1"
+  }
+}

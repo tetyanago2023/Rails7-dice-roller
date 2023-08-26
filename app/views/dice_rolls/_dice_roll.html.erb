@@ -1,0 +1,15 @@
+<div id="<%= dom_id dice_roll %>">
+  <p>
+    <strong>Dice type:</strong>
+    <%= dice_roll.dice_type.name %> * <%= dice_roll.quantity %>
+  </p>
+  <p>
+    <strong>Roll result:</strong>
+    <%= dice_roll.roll_result %> / <%= dice_roll.dice_type.sides * dice_roll.quantity %>
+  </p>
+  <p>
+    <strong>Created at:</strong>
+    <%= time_ago_in_words(dice_roll.created_at) + " ago" %>
+  </p>
+</div>
+
